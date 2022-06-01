@@ -19,6 +19,14 @@ dependencies {
 	// Thymeleaf (Web page)
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 
+	// MySQL Connection
+	implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.22'
+
+	// Maria Connection
+	implementation group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.7.3'
+
+	// Hibernate
+	implementation 'org.hibernate:hibernate-core:6.0.2.Final'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
