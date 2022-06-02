@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
+
+  <persistence-unit name="default">
+
+    <class>com.example.jpaAndHinbernateDemo.entity.DepartmentEntity</class>
+    <class>com.example.jpaAndHinbernateDemo.entity.EmployeeEntity</class>
+    <properties>
+      <property name="hibernate.connection.url" value="jdbc:mariadb://10.211.55.12:3306/hibernate_demo"/>
+      <property name="hibernate.connection.driver_class" value="org.mariadb.jdbc.Driver"/>
+      <property name="hibernate.connection.user" value="root"/>
+      <property name="hibernate.connection.password" value="hello@123"/>
+      <property name="hibernate.show_sql" value="true"/>
+    </properties>
+  </persistence-unit>
+</persistence>
+

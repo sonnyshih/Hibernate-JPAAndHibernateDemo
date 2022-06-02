@@ -18,6 +18,6 @@ CREATE TABLE Department
 ) COMMENT '部門'
 ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 DEFAULT COLLATE=utf8mb3_general_ci;
 
-ALTER TABLE
-    `hibernate_demo`.`Employee` ADD CONSTRAINT Employee_fk1 FOREIGN KEY (`DeptID`) REFERENCES
-    `hibernate_demo`.`Department` (`ID`)
+-- ALTER TABLE
+--     `hibernate_demo`.`Employee` ADD CONSTRAINT Employee_fk1 FOREIGN KEY (`DeptID`) REFERENCES
+--     `hibernate_demo`.`Department` (`ID`)
