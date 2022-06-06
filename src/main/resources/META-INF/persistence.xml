@@ -6,14 +6,22 @@
 
   <persistence-unit name="default">
 
+    <!-- Entity Mapping to table -->
     <class>com.example.jpaAndHinbernateDemo.entity.DepartmentEntity</class>
     <class>com.example.jpaAndHinbernateDemo.entity.EmployeeEntity</class>
+
     <properties>
       <property name="hibernate.connection.url" value="jdbc:mariadb://10.211.55.12:3306/hibernate_demo"/>
       <property name="hibernate.connection.driver_class" value="org.mariadb.jdbc.Driver"/>
       <property name="hibernate.connection.user" value="root"/>
       <property name="hibernate.connection.password" value="hello@123"/>
+
+      <!-- Show / hide the SQL String -->
       <property name="hibernate.show_sql" value="true"/>
+
+      <!-- By using hibernate to modify Database table -->
+      <property name="hibernate.hbm2ddl.auto" value="update"/>
+
     </properties>
   </persistence-unit>
 </persistence>

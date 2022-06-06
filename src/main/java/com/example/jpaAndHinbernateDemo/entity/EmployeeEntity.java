@@ -4,8 +4,9 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "Employee", schema = "hibernate_demo", catalog = "")
+@Table(name = "Employee", schema = "hibernate_demo")
 public class EmployeeEntity {
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "ID")
     private long id;
@@ -15,9 +16,10 @@ public class EmployeeEntity {
     @Basic
     @Column(name = "LastName")
     private String lastName;
-    @Basic
-    @Column(name = "DeptID")
-    private long deptId;
+
+    @ManyToOne
+    @JoinColumn(name = "DeptID", referencedColumnName = "ID", nullable = false)
+    private DepartmentEntity departmentByDeptId;
 
     public long getId() {
         return id;
@@ -43,24 +45,24 @@ public class EmployeeEntity {
         this.lastName = lastName;
     }
 
-    public long getDeptId() {
-        return deptId;
-    }
-
-    public void setDeptId(long deptId) {
-        this.deptId = deptId;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        EmployeeEntity that = (EmployeeEntity) o;
-        return id == that.id && deptId == that.deptId && Objects.equals(firstName, that.firstName) && Objects.equals(lastName, that.lastName);
+        EmployeeEntity entity = (EmployeeEntity) o;
+        return id == entity.id && Objects.equals(firstName, entity.firstName) && Objects.equals(lastName, entity.lastName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, lastName, deptId);
+        return Objects.hash(id, firstName, lastName);
+    }
+
+    public DepartmentEntity getDepartmentByDeptId() {
+        return departmentByDeptId;
+    }
+
+    public void setDepartmentByDeptId(DepartmentEntity departmentByDeptId) {
+        this.departmentByDeptId = departmentByDeptId;
     }
 }
