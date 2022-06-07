@@ -18,4 +18,10 @@ public class GreetingController {
     public String good() {
         return "hello";
     }
+
+    @GetMapping("/manage/test")
+    public String manage() {
+        return "manage/manage";
+    }
+
 }
