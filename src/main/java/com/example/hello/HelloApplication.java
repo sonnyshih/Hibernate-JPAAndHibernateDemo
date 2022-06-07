@@ -11,7 +11,8 @@ import java.util.Arrays;
 
 @SpringBootApplication
 @ComponentScan(basePackages = {
-        "com.example.signin"
+        "com.example.signin",
+        "com.example.hello"
 })
 public class HelloApplication {
 
