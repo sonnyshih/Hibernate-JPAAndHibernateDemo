@@ -11,6 +11,7 @@ import java.util.List;
 public class ActionDemo {
 
     public static void main(String[] args) {
+        // "Default" is in the META-INF/persistence.xml
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("default");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
