@@ -13,11 +13,11 @@ repositories {
 }
 
 dependencies {
-	// Spring boot web (MVC)
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-
-	// Thymeleaf (Web page)
-	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+//	// Spring boot web (MVC)
+//	implementation 'org.springframework.boot:spring-boot-starter-web'
+//
+//	// Thymeleaf (Web page)
+//	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 
 	// MySQL Connection
 	implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.22'

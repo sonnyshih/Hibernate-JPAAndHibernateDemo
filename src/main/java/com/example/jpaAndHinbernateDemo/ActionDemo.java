@@ -15,13 +15,13 @@ public class ActionDemo {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         // Use entityManager
-//        add(entityManager);
+        add(entityManager);
 //        update(entityManager);
 //        delete(entityManager);
 //        selectSingle(entityManager);
 //        useSelectSQL(entityManager);
 //        findAll(entityManager);
-        findByCondition(entityManager);
+//        findByCondition(entityManager);
 
         // Use JDBC
 //        testConnectionInsert(entityManager);
@@ -86,7 +86,7 @@ public class ActionDemo {
 
     // 找出所有
     private static void findAll(EntityManager entityManager){
-        Query query = entityManager.createQuery("from EmployeeEntity"); // EmployeeEntity 是 java 物件
+        Query query = entityManager.createQuery("from AnimalEntity"); // EmployeeEntity 是 java 物件
         List<EmployeeEntity> list = query.getResultList();
         for (EmployeeEntity entity : list) {
             System.out.println(entity.getFirstName());
@@ -94,10 +94,10 @@ public class ActionDemo {
     }
 
     private static void findByCondition(EntityManager entityManager){
-        Query query = entityManager.createQuery("from EmployeeEntity where firstName like ?0"); // EmployeeEntity 是 java 物件
+        Query query = entityManager.createQuery("from AnimalEntity where firstName like ?0"); // EmployeeEntity 是 java 物件
         List<EmployeeEntity> list = query.setParameter(0, "%o%").getResultList();
         for (EmployeeEntity entity : list) {
-            System.out.println(entity.getFirstName());
+            System.out.println("FirstName111="+entity.getFirstName());
         }
     }
 

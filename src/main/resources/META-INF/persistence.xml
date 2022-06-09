@@ -9,8 +9,10 @@
     <!-- Entity Mapping to table -->
     <class>com.example.jpaAndHinbernateDemo.entity.DepartmentEntity</class>
     <class>com.example.jpaAndHinbernateDemo.entity.EmployeeEntity</class>
+      <class>com.example.hibernateDemo.AnimalEntity</class>
+      <class>com.example.hibernateDemo.AnimalEntity_1</class>
 
-    <properties>
+      <properties>
       <property name="hibernate.connection.url" value="jdbc:mariadb://10.211.55.12:3306/hibernate_demo"/>
       <property name="hibernate.connection.driver_class" value="org.mariadb.jdbc.Driver"/>
       <property name="hibernate.connection.user" value="root"/>
@@ -21,8 +23,9 @@
 
       <!-- By using hibernate to modify Database table -->
       <property name="hibernate.hbm2ddl.auto" value="update"/>
+          <property name="hibernate.connection.username" value="root"/>
 
-    </properties>
+      </properties>
   </persistence-unit>
 </persistence>
 

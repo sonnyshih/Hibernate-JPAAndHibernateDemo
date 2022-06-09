@@ -10,10 +10,8 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 public class HibernateDemo {
     public static void main(String[] args) {
 
-        EmployeeEntity emp = new EmployeeEntity();
-        emp.setEmail("demo-user@mail.com");
-        emp.setFirstName("demo");
-        emp.setLastName("user");
+        AnimalEntity animal = new AnimalEntity();
+        animal.setName("Lion");
 
         StandardServiceRegistry standardRegistry = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
         Metadata metaData = new MetadataSources(standardRegistry)
@@ -24,7 +22,7 @@ public class HibernateDemo {
 
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        session.save(emp);
+        session.save(animal);
         session.getTransaction().commit();
         sessionFactory.close();
 
